@@ -91,9 +91,19 @@ paraGraphs[7].textContent = siteContent["contact"]["email"];
 
 paraGraphs[8].textContent = siteContent["footer"]["copyright"];
 
-let parentEl = document.getElementByTagName('nav');
-let childOne = document.createElement('a');
-let childTwo = document.createElement('a');
+const newContent =  {
+  "nav": { 
+    "new-item-1": "New1",
+    "new-item-2": "New2",
+  },
+};
 
-parentEl.appendChild(childOne);
-parentEl.prepend(childTwo);
+const parentEl = document.querySelector('nav');
+const childOne = document.createElement('a');
+const childTwo = document.createElement('a');
+
+childOne.textContent = newContent["nav"]["new-item-1"];
+childTwo.textContent = newContent["nav"]["new-item-2"];
+
+parentEl.prepend(childOne);
+parentEl.appendChild(childTwo);
